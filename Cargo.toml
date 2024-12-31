@@ -1,0 +1,20 @@
+[package]
+name = "polars_qf"
+version = "0.1.0"
+edition = "2021"
+authors = ["cyber-zhs <cyber-zhs@tuta.io>"]
+repository = "https://github.com/cyber-zhs/polars-qf"
+license = "Apache-2.0"
+description = """
+A quant factor plugin for polars.
+"""
+
+[lib]
+name = "polars_qf"
+crate-type = ["cdylib"]
+
+[dependencies]
+polars = { version = "0.45", default-features = false, features = ["dtype-decimal", "ewma"] }
+pyo3 = { version = "0.22", features = ["extension-module"] }
+pyo3-polars = { version = "0.19.0", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }

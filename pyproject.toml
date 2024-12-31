@@ -1,0 +1,42 @@
+[project]
+name = "polars_qf"
+description = "A quant factor plugin for polars"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "polars>=1",
+    "maturin",
+]
+authors = [
+    {name = "cyber-zhs", email = "cyber_zhs@sohu.com"}
+]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "License :: OSI Approved :: Apache Software License ",
+    "Topic :: Scientific/Engineering",
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+license = { file = "LICENSE" }
+dynamic = ["version"]
+
+[project.urls]
+Repository = "https://github.com/cyber-zhs/polars-qf"
+Changelog = "https://github.com/cyber-zhs/polars-qf/releases"
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "numpy",
+    "pandas",
+    "ruff",
+]
+
+[tool.maturin]
+python-source = "python"
+module-name = "polars_qf._polars_qf_core"

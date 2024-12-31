@@ -1,0 +1,10 @@
+/.idea
+/.vscode
+/.pytest_cache
+/.ruff_cache
+/.venv
+/target
+*.so
+*.pyd
+uv.lock
+**/__pycache__
