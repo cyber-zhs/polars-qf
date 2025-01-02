@@ -193,10 +193,11 @@ jobs:
   publish_crates:
     name: Publish to Crates
     runs-on: ubuntu-latest
+    if: ${{ startsWith(github.ref, 'refs/tags/') }}
+    needs: [publish_pypi]
     steps:
       - uses: actions/checkout@v4
       - name: Release to Crates
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
         uses: actions-rs/cargo@v1
         with:
           command: publish
