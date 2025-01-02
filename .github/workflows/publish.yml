@@ -185,7 +185,7 @@ jobs:
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
         uses: PyO3/maturin-action@v1
         env:
-          MATURIN_PYPI_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+          MATURIN_PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
         with:
           command: upload
           args: --non-interactive --skip-existing wheels-*/*
@@ -193,10 +193,11 @@ jobs:
   publish_crates:
     name: Publish to Crates
     runs-on: ubuntu-latest
+    if: ${{ startsWith(github.ref, 'refs/tags/') }}
+    needs: [publish_pypi]
     steps:
       - uses: actions/checkout@v4
       - name: Release to Crates
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
         uses: actions-rs/cargo@v1
         with:
           command: publish
