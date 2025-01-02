@@ -5,14 +5,13 @@ readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "polars>=1",
-    "maturin",
 ]
 authors = [
     {name = "cyber-zhs", email = "cyber_zhs@sohu.com"}
 ]
 classifiers = [
     "Development Status :: 1 - Planning",
-    "License :: OSI Approved :: Apache Software License ",
+    "License :: OSI Approved :: Apache Software License",
     "Topic :: Scientific/Engineering",
     "Programming Language :: Rust",
     "Programming Language :: Python :: Implementation :: CPython",
@@ -31,6 +30,7 @@ build-backend = "maturin"
 
 [dependency-groups]
 dev = [
+    "maturin",
     "pytest",
     "numpy",
     "pandas",
