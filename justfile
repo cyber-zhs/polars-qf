@@ -2,6 +2,9 @@
 
 set windows-shell := ["powershell"]
 
+prepare:
+  uv sync
+
 check:
   cargo fmt --check
   uv run ruff format --check
