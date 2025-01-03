@@ -1,5 +1,5 @@
 [package]
-name = "polars_qf"
+name = "polars-qf"
 version = "0.1.0"
 edition = "2021"
 authors = ["cyber-zhs <cyber-zhs@tuta.io>"]
@@ -10,7 +10,7 @@ A quant factor plugin for polars.
 """
 
 [lib]
-name = "polars_qf"
+name = "_polars_qf_core"
 crate-type = ["cdylib"]
 
 [dependencies]
